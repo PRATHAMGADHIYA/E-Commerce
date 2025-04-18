@@ -9,7 +9,7 @@ const sendEmail=asyncHandler(asyncHandler(async(data,request,res)=>{
         auth: {
           user: process.env.MAIL_ID,
           pass: "jn7jnAPss4f63QBp6D",
-        },
+        },                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
       });
       
       // async..await is not allowed in global scope, must use a wrapper

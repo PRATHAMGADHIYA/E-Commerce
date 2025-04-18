@@ -79,15 +79,15 @@ const logout=asyncHandler(async(req,res)=>{
     console.log(refreshToken);
     const user=await User.findOne({refreshToken});
     if(!user){
-        res.clearCookie("refreshToken",{
+        res.clearCookie("refreshToken",{ 
             httpOnly:true,
             secure:true,
         });
         return res.sendStatus(204);
     }
-    await User.findOneAndUpdate(refreshToken,{
+    await User.findOneAndUpdate(refreshToken,{  
         refreshToken: "",
-    })
+    }),
     res.clearCookie("refreshToken",{
         httpOnly:true,
         secure:true,
@@ -159,7 +159,7 @@ const blockUser = asyncHandler(async (req, res) => {
     try {
         const block = await User.findByIdAndUpdate(id, {
             isBlocked: true,
-        }, {
+        },{
             new: true,
         });
         res.json(block);
